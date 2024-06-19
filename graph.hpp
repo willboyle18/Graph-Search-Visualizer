@@ -1,16 +1,20 @@
 #include <iostream>
 #include <unordered_map>
 #include <vector>
+#include <algorithm>
 
 class Graph{
     private:
     std::unordered_map<char, std::vector<char>> graph;
+    char starting_node;
     
     public:
-    Graph(char n){ graph[n] = {}; }
+    Graph(char n){ graph[n] = {}, starting_node = n; }
     void add_node(char n);
     void add_edge(char first, char second);
     void print_graph();
+    void set_starting_node(char n){starting_node = n;};
+    void get_starting_node(){std::cout << "Starting Node: " << starting_node << std::endl;}
 };
 
 void Graph::add_node(char n){

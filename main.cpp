@@ -6,6 +6,7 @@
 #include <unordered_set>
 #include "graph.hpp"
 #include "BFS.hpp"
+#include "DFS.hpp"
 
 int main(){
     Graph graph('A');
@@ -23,6 +24,8 @@ int main(){
     // graph.get_starting_node();
     graph.print_graph();
     bfs(graph);
+    std::cout << "BFS done" << std::endl;
+    dfs(graph);
 
     return 0;
 }
